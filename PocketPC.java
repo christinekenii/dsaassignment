@@ -1,5 +1,3 @@
-package com.Tatiana;
-
 public class PocketPC {
     public static int mult(int x, int y) {
         if (y == 0) {
