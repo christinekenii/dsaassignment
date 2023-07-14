@@ -3,6 +3,8 @@ package QueuesLab;
 public class QueueTest {
     public static void main(String[]args){
         Queue queue1=new Queue(10); //create queue
+        queue1.displayQueue();
+
         queue1.insert(20);
         queue1.insert(55);
         queue1.insert(47);
@@ -26,6 +28,8 @@ public class QueueTest {
 
         queue1.insert(44);
 
+        queue1.displayQueue();
+
         queue1.remove();
         queue1.remove();
         queue1.remove();
@@ -39,5 +43,7 @@ public class QueueTest {
         queue1.remove();
         queue1.remove();
 
+        queue1.displayQueue();
     }
 }
+

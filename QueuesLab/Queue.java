@@ -19,6 +19,7 @@ class Queue
         nItems = 0;				 //number of Items setup and initialized.
 
     } // end Constructor
+
     public void insert(long j) {
         if (isFull()) {
             System.out.println("Queue is now full. New element cannot be added");
@@ -29,6 +30,27 @@ class Queue
             queArray[++rear] = j;     // increment rear and insert	So rear is set to -1 and it is set to 0 in this statement.
             nItems++;                     // one more item	      	// note:  number of items in queue is incremented.
         } // end insert()
+    }
+    public void displayQueue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty.");
+            return;
+        }
+
+        int i = front;
+        System.out.print("Queue contents are: ");
+
+        // Display items from front to rear
+        while (true) {
+            System.out.print(queArray[i] + " ");
+
+            if (i == rear)
+                break;
+
+            i = (i + 1) % maxSize; // Increment index circularly
+        }
+
+        System.out.println();
     }
     public void remove() {
         if (isEmpty()) {
