@@ -1,4 +1,3 @@
-
 class Queue
 {
     private int maxSize;
@@ -29,6 +28,30 @@ class Queue
             nItems++;                     // one more item	      	// note:  number of items in queue is incremented.
         } // end insert()
     }
+    public void displayQueue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty.");
+            return;
+        }
+
+        int i = front;
+        System.out.print("Queue contents are: ");
+
+        // Display items from front to rear
+        while (true) {
+            System.out.print(queArray[i] + " ");
+
+            if (i == rear)
+                break;
+
+            i = (i + 1) % maxSize; // Increment index circularly
+        }
+
+        System.out.println();
+    }
+
+
+
     public void remove() {
         if (isEmpty()) {
             System.out.println("Queue is now empty. No more elements can be removed");
@@ -41,6 +64,8 @@ class Queue
 
         } // end remove()
     }
+
+
     public long peekFront()
     {   // peek at front of queue
         return queArray[front];
